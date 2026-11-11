@@ -42,16 +42,40 @@ p {
     margin-bottom: 20px;
 }
 
-#btnLike {
-    background-color: #21c55d;
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.acciones button {
     color: white;
     border: none;
-    padding: 13px 30px;
+    padding: 13px 20px;
     border-radius: 8px;
-    font-size: 17px;
+    font-size: 15px;
     cursor: pointer;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
     transition: 0.2s;
+}
+
+#btnLike {
+    background-color: #21c55d;
+}
+
+#btnRestar {
+    background-color: #e69a28;
+}
+
+#btnReiniciar {
+    background-color: #e54848;
+}
+
+.acciones button:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.9);
 }
 
 #btnLike:hover {

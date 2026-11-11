@@ -2,19 +2,23 @@
 // Obtener los elementos del HTML
 const contadorHTML = document.getElementById("contador");
 const botonLike = document.getElementById("btnLike");
+const botonRestar = document.getElementById("btnRestar");
+const botonReiniciar = document.getElementById("btnReiniciar");
 const historial = document.getElementById("historial");
 
 // Variable para almacenar los Likes
 let contador = 0;
 
-// Escuchar los clics del botón
+// Función para actualizar el contador
+function actualizarContador() {
+    contadorHTML.textContent = contador;
+}
+
+// Dar Like
 botonLike.addEventListener("click", function() {
 
-    // Incrementar el contador
     contador++;
-
-    // Actualizar el número en pantalla
-    contadorHTML.textContent = contador;
+    actualizarContador();
 
     // Obtener la hora actual
     const ahora = new Date();
@@ -26,19 +30,39 @@ botonLike.addEventListener("click", function() {
     // Crear una nueva fila
     const fila = document.createElement("tr");
 
-    // Crear las celdas
     const numeroClic = document.createElement("td");
     const horaClic = document.createElement("td");
 
-    // Asignar los valores
     numeroClic.textContent = contador;
     horaClic.textContent = hora;
 
-    // Agregar las celdas a la fila
     fila.appendChild(numeroClic);
     fila.appendChild(horaClic);
 
-    // Insertar la fila al inicio del historial
     historial.prepend(fila);
+
+});
+
+// Restar un Like
+botonRestar.addEventListener("click", function() {
+
+    if (contador > 0) {
+        contador--;
+        actualizarContador();
+
+        // Eliminar el registro del último Like
+        if (historial.firstElementChild) {
+            historial.removeChild(historial.firstElementChild);
+        }
+    }
+
+});
+
+// Reiniciar el contador
+botonReiniciar.addEventListener("click", function() {
+
+    contador = 0;
+    actualizarContador();
+    historial.innerHTML = "";
 
 });
