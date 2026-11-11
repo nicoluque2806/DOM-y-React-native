@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactividad con el DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Interactividad con el DOM</h1>
+        <p>¡Haz clic en el botón y registra tus Likes!</p>
+
+        <div id="contador">0</div>
+
+        <button id="btnLike">Dar Like</button>
+
+        <h2>Historial de clics</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nº Clic</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody id="historial">
+            </tbody>
+        </table>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
