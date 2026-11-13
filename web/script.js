@@ -12,6 +12,12 @@ let contador = 0;
 // Función para actualizar el contador
 function actualizarContador() {
     contadorHTML.textContent = contador;
+
+    if (contador > 10) {
+        contadorHTML.classList.add("superado");
+    } else {
+        contadorHTML.classList.remove("superado");
+    }
 }
 
 // Dar Like
